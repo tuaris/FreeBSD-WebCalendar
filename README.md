@@ -16,6 +16,7 @@ fi
 shift
 git_clone_uri="https://github.com/tuaris/FreeBSD-WebCalendar.git"
 git_branch="master"
+sed -i '' '/webcalendar.*2016-01-25.*Has expired/d' ${poudriere_ports_mountpoint}/${default_poudriere_tree}/MOVED
 run_portshaker_command $*
 ```
 

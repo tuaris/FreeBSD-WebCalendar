@@ -18,15 +18,15 @@ GH_PROJECT=	webcalendar
 
 PORTSCOUT=	limit:^1\.2\. skipb:1
 USE_PHP=	pcre session
-WANT_PHP_WEB=	yes
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		cpe php:flavors
+USES=		cpe php:web,flavors
 CPE_VENDOR=	craig_knudsen
 WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
-DEFAULT_VERSIONS+=	php
+
 WITH_PHP_CGI?=	/cgi-bin/php
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}

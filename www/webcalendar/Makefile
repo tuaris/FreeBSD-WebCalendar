@@ -1,6 +1,7 @@
 # $FreeBSD: head/www/webcalendar/Makefile 401553 2015-11-13 22:13:24Z antoine $
 
 PORTNAME=	WebCalendar
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTVERSION=	1.3.0-50
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-gf2d92600
@@ -22,7 +23,7 @@ USE_PHP=	pcre session
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		cpe php:web
+USES=		cpe php:web,flavors
 CPE_VENDOR=	craig_knudsen
 WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}

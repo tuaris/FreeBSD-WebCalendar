@@ -1,17 +1,19 @@
 # $FreeBSD: head/www/webcalendar/Makefile 401553 2015-11-13 22:13:24Z antoine $
 
 PORTNAME=	WebCalendar
-PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTVERSION=	1.3.0-50
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.0-50
 DISTVERSIONSUFFIX=	-gf2d92600
-DISTNAME=	webcalendar-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CATEGORIES=	www
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DISTNAME=	webcalendar-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based calendar application
 
 LICENSE=	GPLv2
+
+USES=		cpe php:web,flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	craigk5n
@@ -23,7 +25,6 @@ USE_PHP=	pcre session
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		cpe php:web,flavors
 CPE_VENDOR=	craig_knudsen
 WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
@@ -32,8 +33,7 @@ WITH_PHP_CGI?=	/cgi-bin/php
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-PORTDOCS=	WebCalendar-SysAdmin.html \
-		newwin.gif
+PORTDOCS=	WebCalendar-SysAdmin.html newwin.gif
 
 OPTIONS_DEFINE=		APACHE LDAP GRADIENTBG REMINDERS PALM DOCS
 OPTIONS_DEFAULT=	MYSQL REMINDERS
@@ -43,6 +43,7 @@ OPTIONS_SUB=		yes
 GRADIENTBG_DESC=	Gradient background image support
 REMINDERS_DESC=		Email reminder support
 PALM_DESC=		Palm export support
+DBASE_DESC=		Dbase support
 
 APACHE_USE=	APACHE_RUN=24+
 DBASE_USE=	PHP=dbase
@@ -55,6 +56,8 @@ ORACLE_USE=	PHP=oracle
 PALM_RUN_DEPENDS=	pilot-xfer:${PORTSDIR}/palm/pilot-link
 PGSQL_USE=	PHP=pgsql
 SQLITE_USE=	PHP=sqlite3
+
+REMINDERS_USES=	php:cli
 
 .include <bsd.port.pre.mk>
 
@@ -70,13 +73,10 @@ CGI_EXT=	-cgi
 .else
 CGI_EXT=
 .endif
+
 CONF=		webcalendar${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 PLIST_SUB+=	CONFFILE=${CONF}
-
-.if ${PORT_OPTIONS:MREMINDERS}
-WANT_PHP_CLI=	yes
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	HASHMARK=

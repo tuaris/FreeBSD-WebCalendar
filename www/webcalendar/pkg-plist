@@ -1,8 +1,11 @@
 @mode 644
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+%%EXAMPLESDIR%%/%%CONFFILE%%
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/CODE_OF_CONDUCT.md
+%%WWWDIR%%/Dockerfile
 %%WWWDIR%%/GPL.html
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
@@ -33,6 +36,9 @@
 %%WWWDIR%%/doc.php
 %%WWWDIR%%/docadd.php
 %%WWWDIR%%/docdel.php
+%%WWWDIR%%/docker-compose.yml
+%%WWWDIR%%/docs/.gitignore
+%%WWWDIR%%/docs/Makefile
 %%WWWDIR%%/docs/README
 %%WWWDIR%%/docs/WebCalendar-Database.html
 %%WWWDIR%%/docs/WebCalendar-DeveloperGuide.html
@@ -75,6 +81,7 @@
 %%WWWDIR%%/help_uac.php
 %%WWWDIR%%/icalclient.php
 %%WWWDIR%%/icons.php
+%%WWWDIR%%/icons/.gitignore
 %%WWWDIR%%/icons/example.gif
 %%WWWDIR%%/images/HTML5_Logo.png
 %%WWWDIR%%/images/arrow.gif
@@ -135,6 +142,7 @@
 %%WWWDIR%%/import_handler.php
 %%WWWDIR%%/import_outlookcsv.php
 %%WWWDIR%%/import_palmdesktop.php
+%%WWWDIR%%/includes/.gitignore
 %%WWWDIR%%/includes/JSON.php
 %%WWWDIR%%/includes/access.php
 %%WWWDIR%%/includes/ajax.php
@@ -156,6 +164,7 @@
 %%WWWDIR%%/includes/classes/captcha/captcha.php
 %%WWWDIR%%/includes/classes/hKit/hcal.profile.php
 %%WWWDIR%%/includes/classes/hKit/hkit.class.php
+%%WWWDIR%%/includes/classes/phpmailer/.gitignore
 %%WWWDIR%%/includes/classes/phpmailer/LICENSE
 %%WWWDIR%%/includes/classes/phpmailer/class.phpmailer.php
 %%WWWDIR%%/includes/classes/phpmailer/class.smtp.php
@@ -374,6 +383,42 @@
 %%WWWDIR%%/install/sql/upgrade-postgres.sql
 %%WWWDIR%%/install/sql/upgrade.sql
 %%WWWDIR%%/install/sql/upgrade_matrix.php
+%%WWWDIR%%/java/Makefile
+%%WWWDIR%%/java/README.md
+%%WWWDIR%%/java/manifest-mod
+%%WWWDIR%%/java/us/k5n/webcalendar/ActivityLog.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ActivityLogList.java
+%%WWWDIR%%/java/us/k5n/webcalendar/Event.java
+%%WWWDIR%%/java/us/k5n/webcalendar/EventDisplayer.java
+%%WWWDIR%%/java/us/k5n/webcalendar/EventList.java
+%%WWWDIR%%/java/us/k5n/webcalendar/EventLoader.java
+%%WWWDIR%%/java/us/k5n/webcalendar/Login.java
+%%WWWDIR%%/java/us/k5n/webcalendar/LoginSession.java
+%%WWWDIR%%/java/us/k5n/webcalendar/MessageDisplayer.java
+%%WWWDIR%%/java/us/k5n/webcalendar/Participant.java
+%%WWWDIR%%/java/us/k5n/webcalendar/Reminder.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ReminderDisplayer.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ReminderList.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ReminderLoader.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ShowReminder.java
+%%WWWDIR%%/java/us/k5n/webcalendar/User.java
+%%WWWDIR%%/java/us/k5n/webcalendar/UserList.java
+%%WWWDIR%%/java/us/k5n/webcalendar/Utils.java
+%%WWWDIR%%/java/us/k5n/webcalendar/WebCalendarClient.java
+%%WWWDIR%%/java/us/k5n/webcalendar/WebCalendarClientListener.java
+%%WWWDIR%%/java/us/k5n/webcalendar/WebCalendarErrorException.java
+%%WWWDIR%%/java/us/k5n/webcalendar/WebCalendarParseException.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/ActivityLogPanel.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/EventVector.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/Main.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/ReadOnlyTable.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/UnapprovedEventsPanel.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/UserDialog.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/UserListCellRenderer.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/UserListener.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ControlPanel/WebServiceLogPanel.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/ReminderApp.java
+%%WWWDIR%%/java/us/k5n/webcalendar/ui/SampleApp.java
 %%WWWDIR%%/js_cacher.php
 %%WWWDIR%%/layers.php
 %%WWWDIR%%/layers_ajax.php
@@ -495,6 +540,16 @@
 %%WWWDIR%%/week.php
 %%WWWDIR%%/week_details.php
 %%WWWDIR%%/week_ssi.php
+%%WWWDIR%%/ws/activity_log.php
+%%WWWDIR%%/ws/event_mod.php
+%%WWWDIR%%/ws/get_events.php
+%%WWWDIR%%/ws/get_reminders.php
+%%WWWDIR%%/ws/get_unapproved.php
+%%WWWDIR%%/ws/get_users.php
+%%WWWDIR%%/ws/login.php
+%%WWWDIR%%/ws/user_mod.php
+%%WWWDIR%%/ws/webcalendar.jar
+%%WWWDIR%%/ws/ws.php
 %%WWWDIR%%/year.php
 @mode 755
 @dir %%WWWDIR%%/includes
@@ -502,4 +557,3 @@
 @mode
 @owner
 @group
-%%EXAMPLESDIR%%/%%CONFFILE%%

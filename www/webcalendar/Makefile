@@ -68,6 +68,8 @@ CONFDIR_REL=	${APACHEETCDIR}/Includes
 SUB_FILES=	pkg-message
 .endif
 
+SUB_FILES+=	webcalendar-cgi.conf webcalendar.conf
+
 .if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
 CGI_EXT=	-cgi
 .else
@@ -75,7 +77,6 @@ CGI_EXT=
 .endif
 
 CONF=		webcalendar${CGI_EXT}.conf
-SUB_FILES+=	${CONF}
 PLIST_SUB+=	CONFFILE=${CONF}
 
 .if ${PORT_OPTIONS:MDOCS}

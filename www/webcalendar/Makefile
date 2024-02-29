@@ -1,7 +1,6 @@
 PORTNAME=	WebCalendar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1-40
-DISTVERSIONSUFFIX=	-g6183409f
+DISTVERSION=	1.9.10
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	webcalendar-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -9,6 +8,7 @@ DISTNAME=	webcalendar-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based calendar application
 WWW=	http://www.k5n.us/webcalendar.php
+
 LICENSE=	GPLv2
 
 USES=		cpe php:web,flavors
@@ -84,7 +84,11 @@ SUB_LIST+=	HASHMARK=\#
 .endif
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/.github ${WRKSRC}/docker
+	@${RM} -rf  ${WRKSRC}/java ${WRKSRC}/tests ${WRKSRC}/docker \
+	${WRKSRC}/,dockerignore	${WRKSRC}/.dockerignore ${WRKSRC}/.editorconfig \
+	${WRKSRC}/.npmrc ${WRKSRC}/.prettierignore ${WRKSRC}/.prettierrc.json \
+	${WRKSRC}/.browserslistrc ${WRKSRC}/.github ${WRKSRC}/bump_version.sh \
+	${WRKSRC}/Makefile ${WRKSRC}/release-files
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
